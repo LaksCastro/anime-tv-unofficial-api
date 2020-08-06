@@ -410,7 +410,7 @@ interface Detalhes {
 <br>
 
 ### 10. Buscar o próximo episódio
-Por exemplo, eu eu no episódio 12 de um Anime X, então para buscar os detalhes do próximo episódio chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "next"
+Por exemplo, eu estou no episódio 12 de um Anime X, então para buscar os detalhes do próximo episódio chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "next"
 ```
 https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&next
 ```
@@ -450,7 +450,7 @@ interface Stream {
 <br>
 
 ### 11. Buscar o episódio anterior
-Por exemplo, eu eu no episódio 13 de um Anime X, então para buscar os detalhes do episódio anterior chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "previous"
+Por exemplo, eu estou no episódio 13 de um Anime X, então para buscar os detalhes do episódio anterior chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "previous"
 ```
 https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&previous
 ```
