@@ -30,6 +30,8 @@ As limitações foram concluídas somente olhando e testando os endpoints do có
 7. [Buscar os dados de um anime pelo nome](#7-buscar-os-dados-de-um-anime-pelo-nome)
 8. [Buscar os detalhes de um anime](#8-buscar-os-detalhes-de-um-anime)
 9. [Buscar os animes mais populares](#9-buscar-os-animes-mais-populares)
+10. [Buscar o próximo episódio](#9-buscar-o-próximo-episódio)
+11. [Buscar o episódio anterior](#9-buscar-o-episódio-anterior)
 
 ### 1. Iniciando
 1. Tenha em mente que todas as requisições devem ser feitas usando query params, ou seja, usando o ponto de interrogação, exemplo: `?endpoint=abc`  
@@ -403,3 +405,83 @@ interface Detalhes {
 ```
 
 **Limitações: A lista não é muito atualizada, não tem bastante precisão e não possui paginação**
+
+
+<br>
+
+### 10. Buscar o próximo episódio
+Por exemplo, eu eu no episódio 12 de um Anime X, então para buscar os detalhes do próximo episódio chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "next"
+```
+https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&next
+```
+
+O retorno da requisição:
+```js
+[
+  {
+    "video_id": "8537",
+    "category_id": "365",
+    "title": "True Tears Episódio 13 Online",
+    "location": "https://redirector.googlevideo.com/videoplayback?expire=1596694109&ei=3S0rX6XnGPqC2LYPrdGx4Ao&ip=149.56.143.221&id=63402cd052286e3e&itag=18&source=blogger&mh=5Y&mm=31&mn=sn-25ge7nse&ms=au&mv=u&mvi=1&pl=27&susc=bl&mime=video/mp4&dur=1455.426&lmt=1291592434035295&mt=1596665151&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AOq0QJ8wRQIgQl6-CaRe9t0UlTH-4-pdzFfEi-1AzyjMrvC0fwbx4WwCIQCMBRYtxIdrGMNko7VCzU8MC3nFclAnTwbEoBDALCMPcA%3D%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgVoM2dM61uRyrfrssOY_TrHBD1BWWR0A-CeLIpivYfwgCIQCXBBQl0-BBR8FF7SKcGr6RKCtcfw8BSW0p16uHXeo3UQ%3D%3D",
+    "locationsd": "https://redirector.googlevideo.com/videoplayback?expire=1586933343&ei=3z2WXtv3BJOqhwai2aHQBw&ip=149.56.143.221&id=433cf5d28647c5f2&itag=22&source=blogger&mh=Nw&mm=31&mn=sn-4g5e6nzl&ms=au&mv=u&mvi=1&pl=27&susc=bl&mime=video/mp4&dur=1455.194&lmt=1342396941052207&mt=1586904371&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AJpPlLswRQIgPIjV32_P8chaUM7oM828NQcLWCdX-1wv7KeX-oRv25wCIQCGw031lOJ0s-FfnwMm2HHqhO-KelWjVmNnSg6P36dgcg%3D%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=ALrAebAwRgIhAMFXLvQChNCTcjQyoR4tg0cW-gi6s2siWaA83TAd3D0GAiEAqjmntzAmyuVy8uth9Ffg-Hp-Btk76sbBd-sWVbzGJkQ%3D"
+  }
+]
+```
+
+Explicação da resposta:
+```
+video_id: ID do episódio
+category_id: ID do anime na qual o episódio pertence
+location: URL do vídeo em qualidade normal
+locationsd: URL do vídeo em qualidade HD (A maioria dos animes não possui esse campo, apenas os mais atuais entre +- de 2019 até agora)
+```
+
+Formato da resposta:
+```ts
+interface Stream {
+  video_id: string,
+  category_id: string,
+  location: string,
+  locationsd: string,
+}[]
+```
+
+
+<br>
+
+### 11. Buscar o episódio anterior
+Por exemplo, eu eu no episódio 13 de um Anime X, então para buscar os detalhes do episódio anterior chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "previous"
+```
+https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&previous
+```
+
+O retorno da requisição:
+```js
+[
+  {
+    "video_id": "8537",
+    "category_id": "365",
+    "title": "True Tears Episódio 12 Online",
+    "location": "https://redirector.googlevideo.com/videoplayback?expire=1596694109&ei=3S0rX6XnGPqC2LYPrdGx4Ao&ip=149.56.143.221&id=63402cd052286e3e&itag=18&source=blogger&mh=5Y&mm=31&mn=sn-25ge7nse&ms=au&mv=u&mvi=1&pl=27&susc=bl&mime=video/mp4&dur=1455.426&lmt=1291592434035295&mt=1596665151&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AOq0QJ8wRQIgQl6-CaRe9t0UlTH-4-pdzFfEi-1AzyjMrvC0fwbx4WwCIQCMBRYtxIdrGMNko7VCzU8MC3nFclAnTwbEoBDALCMPcA%3D%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgVoM2dM61uRyrfrssOY_TrHBD1BWWR0A-CeLIpivYfwgCIQCXBBQl0-BBR8FF7SKcGr6RKCtcfw8BSW0p16uHXeo3UQ%3D%3D",
+    "locationsd": "https://redirector.googlevideo.com/videoplayback?expire=1586933343&ei=3z2WXtv3BJOqhwai2aHQBw&ip=149.56.143.221&id=433cf5d28647c5f2&itag=22&source=blogger&mh=Nw&mm=31&mn=sn-4g5e6nzl&ms=au&mv=u&mvi=1&pl=27&susc=bl&mime=video/mp4&dur=1455.194&lmt=1342396941052207&mt=1586904371&sparams=expire,ei,ip,id,itag,source,susc,mime,dur,lmt&sig=AJpPlLswRQIgPIjV32_P8chaUM7oM828NQcLWCdX-1wv7KeX-oRv25wCIQCGw031lOJ0s-FfnwMm2HHqhO-KelWjVmNnSg6P36dgcg%3D%3D&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=ALrAebAwRgIhAMFXLvQChNCTcjQyoR4tg0cW-gi6s2siWaA83TAd3D0GAiEAqjmntzAmyuVy8uth9Ffg-Hp-Btk76sbBd-sWVbzGJkQ%3D"
+  }
+]
+```
+
+Explicação da resposta:
+```
+video_id: ID do episódio
+category_id: ID do anime na qual o episódio pertence
+location: URL do vídeo em qualidade normal
+locationsd: URL do vídeo em qualidade HD (A maioria dos animes não possui esse campo, apenas os mais atuais entre +- de 2019 até agora)
+```
+
+Formato da resposta:
+```ts
+interface Stream {
+  video_id: string,
+  category_id: string,
+  location: string,
+  locationsd: string,
+}[]
+```
