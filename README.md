@@ -225,7 +225,7 @@ interface Anime {
 ### 6. Buscar os dados de Streaming de um episódio
 Os "dados de Streaming" contém os dados da URL do vídeo do episódio, em algum formato de vídeo. Para buscar estes dados, utilize o endpoint:
 ```
-https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO
+https://appanimeplus.tk/api-achance.php?episodes=ID_DO_EPISODIO
 ```
 
 O retorno da requisição:
