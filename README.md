@@ -35,7 +35,7 @@ As limitações foram concluídas somente olhando e testando os endpoints do có
 
 ### 1. Iniciando
 1. Tenha em mente que todas as requisições devem ser feitas usando query params, ou seja, usando o ponto de interrogação, exemplo: `?endpoint=abc`  
-2. A URL de base é esta: `https://appanimeplus.tk/api-achance.php`  
+2. A URL de base é esta: `https://appanimeplus.tk/api-animesbr-10.php`  
 3. A URL de base das imagens é esta: `https://cdn.appanimeplus.tk/img/`
 
 > A URL de base é a URL que você utilizará para buscar os dados em JSON
@@ -48,7 +48,7 @@ As limitações foram concluídas somente olhando e testando os endpoints do có
 ### 2. Buscar os dados dos últimos animes lançados
 Para buscar os últimos lançamentos, o endpoint é este:
 ```
-https://appanimeplus.tk/api-achance.php?latest
+https://appanimeplus.tk/api-animesbr-10.php?latest
 ```
 Isto irá retornar, no momento em que estou buscando os últimos 30 lançamentos:
 ```js
@@ -93,7 +93,7 @@ interface Episodio {
 ### 3. Buscar os dados de animes por categoria
 Para buscar os animes que se encaixam em uma categoria use o endpoint:
 ```
-https://appanimeplus.tk/api-achance.php?categoria=NOME_DA_CATEGORIA
+https://appanimeplus.tk/api-animesbr-10.php?categoria=NOME_DA_CATEGORIA
 ```
 
 O retorno da requisição:
@@ -138,7 +138,7 @@ Todas as categorias disponíveis [podem ser vistas neste arquivo.](/CATEGORIES.m
 ### 4. Buscar os dados de animes por letra
 Para buscar os animes por sua letra inicial, utilize o endpoint: 
 ```
-https://appanimeplus.tk/api-achance.php?letra=QUALQUER_LETRA_OU_#
+https://appanimeplus.tk/api-animesbr-10.php?letra=QUALQUER_LETRA_OU_#
 ```
 Todas as letras disponíveis são \[A-Z] e também o jogo da velha "#" que simboliza todos os animes que possuem o nome que inicia com um caracter especial
 
@@ -182,7 +182,7 @@ interface Anime {
 ### 5. Buscar os dados dos episódios de um anime
 Para buscar os dados dos episódios de um anime, você precisa do ID deste anime, se não tem, obtenha ele utilizando algum dos endpoints anteriores. Com o ID do anime em mãos, use o endpoint: 
 ```
-https://appanimeplus.tk/api-achance.php?cat_id=ID_DO_ANIME
+https://appanimeplus.tk/api-animesbr-10.php?cat_id=ID_DO_ANIME
 ```
 
 O retorno da requisição:
@@ -225,7 +225,7 @@ interface Anime {
 ### 6. Buscar os dados de Streaming de um episódio
 Os "dados de Streaming" contém os dados da URL do vídeo do episódio, em algum formato de vídeo. Para buscar estes dados, utilize o endpoint:
 ```
-https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO
+https://appanimeplus.tk/api-animesbr-10.php?episodios=ID_DO_EPISODIO
 ```
 
 O retorno da requisição:
@@ -270,12 +270,12 @@ Para buscar animes pelo nome, siga estas regras:
 
 E então utilize o endpoint:
 ```
-https://appanimeplus.tk/api-achance.php?search=NOME_DO_ANIME
+https://appanimeplus.tk/api-animesbr-10.php?search=NOME_DO_ANIME
 ```
 
 Por exemplo, o anime Steins;Gate ficará desta forma:
 ```
-https://appanimeplus.tk/api-achance.php?search=steins_gate
+https://appanimeplus.tk/api-animesbr-10.php?search=steins_gate
 ```
 
 O retorno da requisição:
@@ -316,7 +316,7 @@ interface Anime {
 ### 8. Buscar os detalhes de um anime
 Para buscar os detalhes do anime basta fazer uma requisição para este endpoint usando o ID do anime:
 ```
-https://appanimeplus.tk/api-achance.php?info=ID_DO_ANIME
+https://appanimeplus.tk/api-animesbr-10.php?info=ID_DO_ANIME
 ```
 
 O retorno da requisição:
@@ -366,7 +366,7 @@ interface Detalhes {
 ### 9. Buscar os animes mais populares
 Para buscar uma lista com os animes mais populares utilize o endpoint:
 ```
-https://appanimeplus.tk/api-achance.php?populares
+https://appanimeplus.tk/api-animesbr-10.php?populares
 ```
 
 O retorno da requisição:
@@ -412,7 +412,7 @@ interface Detalhes {
 ### 10. Buscar o próximo episódio
 Por exemplo, eu estou no episódio 12 de um Anime X, então para buscar os detalhes do próximo episódio chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "next"
 ```
-https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&next
+https://appanimeplus.tk/api-animesbr-10.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&next
 ```
 
 O retorno da requisição:
@@ -452,7 +452,7 @@ interface Stream {
 ### 11. Buscar o episódio anterior
 Por exemplo, eu estou no episódio 13 de um Anime X, então para buscar os detalhes do episódio anterior chamo o endpoint abaixo enviando os dados: ID do episódio atual, ID do anime e a query param "previous"
 ```
-https://appanimeplus.tk/api-achance.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&previous
+https://appanimeplus.tk/api-animesbr-10.php?episodios=ID_DO_EPISODIO_ATUAL&catid=ID_DO_ANIME&previous
 ```
 
 O retorno da requisição:
