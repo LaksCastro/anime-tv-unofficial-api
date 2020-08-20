@@ -1,10 +1,17 @@
 <p align="center">
-  <img src="/assets/animetv.png" width="70">
+  <img src="/assets/animetv.png" width="70" />
 </p>
-<h2 align="center">Anime TV API</h2>
+<p align="center">⭐⭐⭐⭐⭐</p>
+<h1 align="center">Anime TV API</h1>
+<h4 align="center"><a href="https://github.com/LaksCastro/anime-tv-api/tree/master/app"><code>Analyse Extracted Code</code></a></h4>
+<p align="center">Anime TV é um  aplicativo utilizado para Stream de animes totalmente grátis mas com anúncios. E este repositório é a documentação não oficial da API utilizada para buscar os dados dos animes.</a></p>
 <p align="center">
-  Anime TV é um  aplicativo utilizado para Stream de animes totalmente grátis mas com anúncios. E este repositório é a documentação não oficial da API utilizada para buscar os dados dos animes.
+  <img  src="https://img.shields.io/badge/type-mobile_apk_extractor-purple" alt="Application Category" />
+  <img  src="https://img.shields.io/badge/status-working_fine-success" alt="Repo Status" />
+  <img  src="https://img.shields.io/badge/where_from-anime_tv_api-blue" alt="Repo Ref" />
 </p>
+
+
 
 <br>
 
