@@ -42,7 +42,7 @@ As limitações foram concluídas somente olhando e testando os endpoints do có
 
 ### 1. Iniciando
 1. Tenha em mente que todas as requisições devem ser feitas usando query params, ou seja, usando o ponto de interrogação, exemplo: `?endpoint=abc`  
-2. A URL de base é esta: `https://appanimeplus.tk/animetvtech-10.php`  
+2. A URL de base é esta: `https://appanimeplus.tk/api-animesbr-10.php`  
 3. A URL de base das imagens é esta: `https://cdn.appanimeplus.tk/img/`
 
 > A URL de base é a URL que você utilizará para buscar os dados em JSON
