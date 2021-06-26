@@ -7,7 +7,7 @@
 <p align="center">Anime TV é um  aplicativo utilizado para Stream de animes totalmente grátis mas com anúncios. E este repositório é a documentação não oficial da API utilizada para buscar os dados dos animes.</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/type-api_endpoints-purple" alt="Application Category" />
-  <img  src="https://img.shields.io/badge/status-working_fine-success" alt="Repo Status" />
+  <img  src="https://img.shields.io/badge/status-broken-red" alt="Repo Status" />
   <img  src="https://img.shields.io/badge/where_from-anime_tv_mobile_app-blue" alt="Repo Ref" />
 </p>
 
